@@ -8,13 +8,13 @@ A ridiculous terminal game to test your ability to judge time.
 
 ## Play
 
-Run `hlhl` in a terminal.
+Run `howlonghowlong` in a terminal.
 
 Press space to flash the screen.
 
 How long did the screen flash?
 
-Think it was 100ms? Press 1. 200? Press 2. And so on, up to 900 milliseconds.
+100ms? Type `1`. 200? Type `2`. And so on, up to 900 milliseconds.
 
 After guessing, you'll be shown if your guess was correct. Press space for the next flash.
 
