@@ -10,8 +10,7 @@ import (
 )
 
 var which, guess = -1, -1
-var results [2][9]struct{ ok, bad int }
-var hist [17]int
+var results [5][9]struct{ ok, bad int }
 
 func pwhite() {
 	tb.Clear(tb.ColorWhite, tb.ColorWhite)
@@ -30,12 +29,14 @@ func presults() {
 	tb.Clear(tb.ColorBlack, tb.ColorBlack)
 	width, height := tb.Size()
 	for k, results := range results {
-
+		totok, totbad := 0, 0
 		for i, r := range results {
-			y := height - i - 1
+			totok += r.ok
+			totbad += r.bad
+			y := height - i - 2
 			tb.SetCell(0, y, rune('1'+i), tb.ColorWhite, tb.ColorBlack)
-			x := pstring(fmt.Sprintf("%d", r.ok), 2+12*k, y, tb.ColorGreen, tb.ColorBlack)
-			x = pstring(fmt.Sprintf("%d", r.bad), x+1, y, tb.ColorRed, tb.ColorBlack)
+			x := pstring(fmt.Sprintf("%2d", r.ok), 2+12*k, y, tb.ColorGreen, tb.ColorBlack)
+			x = pstring(fmt.Sprintf("%2d", r.bad), x+1, y, tb.ColorRed, tb.ColorBlack)
 			if guess != -1 {
 				if i == which {
 					if which == guess {
@@ -47,6 +48,9 @@ func presults() {
 					pstring("***", x+2, y, tb.ColorRed, tb.ColorBlack)
 				}
 			}
+		}
+		if totok+totbad > 0 {
+			pstring(fmt.Sprintf("%04d", 1000*totok/(totok+totbad)), 2+12*k+1, height-1, tb.ColorWhite, tb.ColorBlack)
 		}
 	}
 	if guess != -1 {
@@ -109,15 +113,15 @@ func main() {
 			}
 			presults()
 		}
-		if guess == which {
-			results[0][which].ok++
-			results[1][which].ok++
-		} else {
-			results[0][which].bad++
-			if guess == which+1 || guess == which-1 {
-				results[1][which].ok++
+		diff := which - guess
+		if diff < 0 {
+			diff = -diff
+		}
+		for k := range results {
+			if diff <= k {
+				results[k][which].ok++
 			} else {
-				results[1][which].bad++
+				results[k][which].bad++
 			}
 		}
 	}
