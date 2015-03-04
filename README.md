@@ -4,7 +4,7 @@ Time Judge is a ridiculous ternimal game to test your ability to judge time.
 
 ## Install
 
-`go get github.com/erinok/judgetime`
+`go get github.com/erinok/timejudge`
 
 ## How to Play
 
