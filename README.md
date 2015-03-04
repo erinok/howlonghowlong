@@ -16,7 +16,7 @@ Press space to flash the screen.
 
 How long did the screen flash?
 
-100ms? Type `1`. 200? Type `2`. And so on, up to 900 milliseconds.
+100ms? Type `1`. 200? Type `2`. And so on, up to `9` for 900ms.
 
 After guessing, you'll be shown if your guess was correct. Press space for the next flash.
 
@@ -24,4 +24,4 @@ Your score so far is tallied in columns along the bottom of the screen. The left
 
 ## Stop Playing
 
-Type "q".
+Type `q`.
