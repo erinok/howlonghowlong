@@ -1,17 +1,22 @@
-## Time Judge
+## What is this?
 
-Time Judge is a ridiculous ternimal game to test your ability to judge time.
+A ridiculous terminal game to test your ability to judge time.
 
 ## Install
 
-`go get github.com/erinok/timejudge`
+`go get github.com/erinok/howlonghowlong`
 
-## How to Play
+## Play
+
+Run `hlhl` in a terminal.
 
 Press space to flash the screen.
 
-The flash will last one of 100, 200, ..., 900 milliseconds. After the flash, press 1-9 to record your guess of the duration of the flash. (To repeat the flash, press space again.)
+How long did the screen flash?
+
+Think it was 100ms? Press 1. 200? Press 2. And so on, up to 900 milliseconds.
 
 After guessing, you'll be shown if your guess was correct. Press space for the next flash.
 
-Your score so far is tallied in columns along the bottom of the screen. The leftmost column is for perfect guesses, the next column for guesses correct +/- 100ms, the next column +/- 200ms, and so on.
+Your score so far is tallied in columns along the bottom of the screen. The leftmost column is for perfect guesses, the next column for guesses correct +/- 100ms, the next for +/- 200ms, and so on.
+
