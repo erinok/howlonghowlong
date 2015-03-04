@@ -1,5 +1,7 @@
 ## What is this?
 
+![screenshot](ss.png "the silly game")
+
 A ridiculous terminal game to test your ability to judge time.
 
 ## Install
@@ -20,3 +22,6 @@ After guessing, you'll be shown if your guess was correct. Press space for the n
 
 Your score so far is tallied in columns along the bottom of the screen. The leftmost column is for perfect guesses, the next column for guesses correct +/- 100ms, the next for +/- 200ms, and so on.
 
+## Stop Playing
+
+Type "q".
